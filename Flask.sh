@@ -1,0 +1,15 @@
+pip install flask
+pip install flask-login
+pip install flask-openid
+pip install flask-mail
+pip install flask-whooshalchemy
+pip install flask-wtf
+pip install flask-babel
+pip install guess_language
+pip install flipflop
+pip install coverage
+pip install flask_bcrypt
+pip install botocore
+pip install boto3
+pip install wand
+pip install zappa

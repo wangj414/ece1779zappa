@@ -54,12 +54,12 @@ body, html{
         <a href='index' class="navbar-brand">Yammme</a>
       </div>
       <div class="nav navbar-nav">
-        <li><a href='tea'>Bubble Tea</a></li>
-        <li><a href='dessert'>Dessert</a></li>
-        <li><a href='asian'>Asian Food</a></li>
-        <li><a href='french'>French Cuisine</a></li>
-          <li><a href='favorites'>Favorites</a></li>
-          <li><a href='index' class="background">Home</a></li>
+        <li><a href='/tea'>Bubble Tea</a></li>
+        <li><a href='/dessert'>Dessert</a></li>
+        <li><a href='/asian'>Asian Food</a></li>
+        <li><a href='/french'>French Cuisine</a></li>
+          <li><a href='/favorites'>Favorites</a></li>
+          <li><a href='/index' class="background">Home</a></li>
       </div>
       <!--<form action="{{url_for('sign_up_page')}}" method="post" class="form-inline">-->
         <!--<button class="btn btn-primary" type="submit" style="float: right">SignUp</button>-->
@@ -120,7 +120,7 @@ body, html{
 
       {% for i in range(3) %}
       <p> <div class="col-lg-4">
-         <a href="/detail?info={{top[i]}}">
+         <a href="{{ url_for('detail')}}?info={{top[i]}}" >
             <div class="thumbnail">
             <img src={{top[i]}} style="width:400px;height:400px">
                 <figcaption class="text">{{content[i]}}</figcaption>

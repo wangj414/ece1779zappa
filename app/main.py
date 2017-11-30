@@ -8,8 +8,8 @@ from app import webapp
 from flask import render_template, session, request, url_for
 
 import boto3
-from boto3.dynamodb.conditions import Key, Attr
-from botocore.exceptions import ClientError
+# from boto3.dynamodb.conditions import Key, Attr
+# from botocore.exceptions import ClientError
 
 
 def get_table(table_name):

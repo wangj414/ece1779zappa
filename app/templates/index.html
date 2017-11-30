@@ -54,12 +54,13 @@ body, html{
         <a href='index' class="navbar-brand">Yammme</a>
       </div>
       <div class="nav navbar-nav">
-        <li><a href='/tea'>Bubble Tea</a></li>
-        <li><a href='/dessert'>Dessert</a></li>
-        <li><a href='/asian'>Asian Food</a></li>
-        <li><a href='/french'>French Cuisine</a></li>
-          <li><a href='/favorites'>Favorites</a></li>
-          <li><a href='/index' class="background">Home</a></li>
+
+        <li><a href="{{url_for('bubble_tea_page') }}">Bubble Tea</a></li>
+        <li><a href="{{url_for('dessert_page') }}">Dessert</a></li>
+        <li><a href="{{url_for('asian_page') }}">Asian Food</a></li>
+        <li><a href="{{url_for('french_page') }}">French Cuisine</a></li>
+          <li><a href="{{url_for('favorites') }}">Favorites</a></li>
+          <li><a href="{{url_for('index') }}" class="background">Home</a></li>
       </div>
       <!--<form action="{{url_for('sign_up_page')}}" method="post" class="form-inline">-->
         <!--<button class="btn btn-primary" type="submit" style="float: right">SignUp</button>-->
@@ -72,11 +73,11 @@ body, html{
     <!--</form>-->
         <ul class="nav navbar-nav navbar-right">
             {% if user == null %}
-            <li><a href="signup">Sign Up</a></li>
-            <li><a href="login">Login</a></li>
+            <li><a href="{{url_for('sign_up_page') }}">Sign Up</a></li>
+            <li><a href="{{url_for('login_page') }}">Login</a></li>
             {%else%}
             <li><a href="#" style="font-weight:bold">Welcome, {{user}}</a></li>
-            <li><a href="logout">Logout</a></li>
+            <li><a href="{{url_for('logout') }}">Logout</a></li>
             {% endif %}
             <li><a href="#"> </a></li>
         </ul>
@@ -113,14 +114,15 @@ body, html{
 <figcaption class="text describe">"Welcome to Yammme"</figcaption>
 </div>
 
-     {% if top != null %}
+    {% if top != null %}
      <div class="container">
          <figcaption class="text top_title">"Top three restaurant"</figcaption>
     <div class="row">
-
       {% for i in range(3) %}
       <p> <div class="col-lg-4">
-         <a href="{{ url_for('detail')}}?info={{top[i]}}" >
+
+         <a href="{{url_for('detail') }}?info={{top[i]}}">
+
             <div class="thumbnail">
             <img src={{top[i]}} style="width:400px;height:400px">
                 <figcaption class="text">{{content[i]}}</figcaption>
@@ -130,7 +132,8 @@ body, html{
         {% endfor %}
         </div>
 </div>
-{% endif %}
+ {% endif %}
+
 
      </div>
 </body>

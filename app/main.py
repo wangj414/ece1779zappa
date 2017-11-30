@@ -2,10 +2,10 @@ import collections
 import datetime
 import operator
 
-from werkzeug.utils import redirect
+# from werkzeug.utils import redirect
 
 from app import webapp
-from flask import render_template, session, request, url_for
+from flask import render_template, session, request, url_for, redirect
 
 import boto3
 # from boto3.dynamodb.conditions import Key, Attr
@@ -253,7 +253,7 @@ def review():
         },
         ReturnValues="UPDATED_NEW"
     )
-    return redirect('/detail?info='+path)
+    return redirect(url_for('detail')+'?info='+path)
 
 
 @webapp.route('/favorite',methods=['POST'])

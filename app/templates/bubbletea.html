@@ -34,12 +34,12 @@ body{
         <a href='#' class="navbar-brand">Yammme</a>
       </div>
       <div class="nav navbar-nav">
-        <li><a href='tea' class="background">Bubble Tea</a></li>
-        <li><a href='dessert'>Dessert</a></li>
-        <li><a href='asian'>Asian Food</a></li>
-        <li><a href='french'>French Cuisine</a></li>
-          <li><a href='favorites'>Favorites</a></li>
-          <li><a href='index'>Home</a></li>
+        <li><a href="{{url_for('bubble_tea_page') }}" class="background">Bubble Tea</a></li>
+        <li><a href="{{url_for('dessert_page') }}">Dessert</a></li>
+        <li><a href="{{url_for('asian_page') }}">Asian Food</a></li>
+        <li><a href="{{url_for('french_page') }}">French Cuisine</a></li>
+          <li><a href="{{url_for('favorites') }}">Favorites</a></li>
+          <li><a href="{{url_for('index') }}">Home</a></li>
       </div>
       <!--<form action="{{url_for('sign_up_page')}}" method="post" class="form-inline">-->
         <!--<button class="btn btn-primary" type="submit" style="float: right">SignUp</button>-->
@@ -52,11 +52,11 @@ body{
     <!--</form>-->
         <ul class="nav navbar-nav navbar-right">
             {% if user == null %}
-            <li><a href="signup">Sign Up</a></li>
-            <li><a href="login">Login</a></li>
+            <li><a href="{{url_for('sign_up_page') }}">Sign Up</a></li>
+            <li><a href="{{url_for('login_page') }}">Login</a></li>
             {%else%}
             <li><a href="#" style="font-weight:bold">Welcome, {{user}}</a></li>
-            <li><a href="logout">Logout</a></li>
+            <li><a href="{{url_for('logout') }}">Logout</a></li>
             {% endif %}
             <li><a href="#"> </a></li>
         </ul>

@@ -1,8 +1,8 @@
 from botocore.exceptions import ClientError
-from werkzeug.utils import redirect
+# from werkzeug.utils import redirect
 
 from app import webapp
-from flask import render_template, session, request, url_for
+from flask import render_template, session, request, url_for, redirect
 
 import boto3
 

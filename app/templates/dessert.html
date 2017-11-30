@@ -33,22 +33,22 @@ body{
       <div class="navbar-header">
         <a href='#' class="navbar-brand">Yammme</a>
       </div>
-      <div class="nav navbar-nav">
-        <li><a href='tea'>Bubble Tea</a></li>
-        <li><a href='dessert' class="background">Dessert</a></li>
-        <li><a href='asian'>Asian Food</a></li>
-        <li><a href='french'>French Cuisine</a></li>
-          <li><a href='favorites'>Favorites</a></li>
-          <li><a href='index'>Home</a></li>
+        <div class="nav navbar-nav">
+        <li><a href="{{url_for('bubble_tea_page') }}">Bubble Tea</a></li>
+        <li><a href="{{url_for('dessert_page') }}" class="background">Dessert</a></li>
+        <li><a href="{{url_for('asian_page') }}">Asian Food</a></li>
+        <li><a href="{{url_for('french_page') }}">French Cuisine</a></li>
+          <li><a href="{{url_for('favorites') }}">Favorites</a></li>
+          <li><a href="{{url_for('index') }}">Home</a></li>
       </div>
 
         <ul class="nav navbar-nav navbar-right">
             {% if user == null %}
-            <li><a href="signup">Sign Up</a></li>
-            <li><a href="login">Login</a></li>
+            <li><a href="{{url_for('sign_up_page') }}">Sign Up</a></li>
+            <li><a href="{{url_for('login_page') }}">Login</a></li>
             {%else%}
             <li><a href="#" style="font-weight:bold">Welcome, {{user}}</a></li>
-            <li><a href="logout">Logout</a></li>
+            <li><a href="{{url_for('logout') }}">Logout</a></li>
             {% endif %}
             <li><a href="#"> </a></li>
         </ul>
@@ -83,7 +83,7 @@ body{
     <div class="row">
       {% for j in range(3) %}
       <p> <div class="col-lg-4">
-         <a href="/detail?info={{grid[i][j]}}">
+         <a href="{{url_for('detail') }}?info={{grid[i][j]}}">
             <div class="thumbnail">
             <img src={{grid[i][j]}}>
                 <figcaption class="text">{{description[i][j]}}</figcaption>

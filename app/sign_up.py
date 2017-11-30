@@ -1,14 +1,14 @@
 import hashlib
 
 from botocore.exceptions import ClientError
-from werkzeug.utils import redirect
+# from werkzeug.utils import redirect
 
 from app import webapp
 from flask import render_template, session, request, url_for
 
 import boto3
 
-from app.config import my_email
+# from app.config import my_email
 from app.main import get_table
 
 
@@ -43,8 +43,8 @@ def signup():
                             )
     else:
         src = email + password
-        code = hashlib.sha256(src.encode('utf-8')).hexdigest()
-
+        # code = hashlib.sha256(src.encode('utf-8')).hexdigest()
+        code = 'Test'
         response = table.put_item(
             Item={
                 'email': email,
@@ -57,10 +57,10 @@ def signup():
 
         ses = boto3.client('ses')
 
-        link = request.url_root + 'sign_up/verify/' + email + '&' + code
+        link = "https://90iq12vsd0.execute-api.us-east-1.amazonaws.com/dev" + 'sign_up/verify/' + email + '&' + code
         print(email)
         response = ses.send_email(
-            Source=my_email,
+            Source=webapp.config['my_email'],
             Destination={
                 'ToAddresses': [
                     email,
@@ -86,7 +86,7 @@ def signup():
     !</h2>
     <p>Welcome to the <a href="
     ''' +
-                                request.url_root
+                                "https: // 90iq12vsd0.execute - api.us - east - 1.amazonaws.com / dev"
                                 + '''
     ">Yammme</a>.</p>
     <h3>Verify Your Account</h3>

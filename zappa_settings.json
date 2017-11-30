@@ -1,11 +1,11 @@
 {
     "dev": {
-       "project_name": "ECE1779FinalZappa",
+       "project_name": "ece1779zappa",
        "keep_warm": false,
        "debug": true,
        "log_level": "DEBUG",
        "s3_bucket": "ece1779finalfoods",
-       "app_function": "app.__init__.webapp",
+       "app_function": "app.webapp",
        "http_methods": ["GET","POST"],
        "parameter_depth": 1,
        "timeout_seconds": 300,

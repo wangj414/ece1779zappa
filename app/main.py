@@ -310,7 +310,7 @@ def favorite():
     )
 
 
-    return redirect(url_for('favorites'))
+    return redirect(url_for('detail')+'?info='+favorite)
 
 
 
@@ -365,7 +365,7 @@ def disfavorite():
         ReturnValues="UPDATED_NEW"
     )
 
-    return redirect(url_for('favorites'))
+    return redirect(url_for('detail')+'?info='+disfavorite)
 
 
 

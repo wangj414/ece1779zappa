@@ -57,7 +57,7 @@ def signup():
 
         ses = boto3.client('ses')
 
-        link = "https://90iq12vsd0.execute-api.us-east-1.amazonaws.com/dev" + 'sign_up/verify/' + email + '&' + code
+        link = "https://h1u79dg2z9.execute-api.us-east-1.amazonaws.com/dev/" + 'sign_up/verify/' + email + '&' + code
         print(email)
         response = ses.send_email(
             Source=webapp.config['my_email'],
@@ -86,7 +86,7 @@ def signup():
     !</h2>
     <p>Welcome to the <a href="
     ''' +
-                                "https: // 90iq12vsd0.execute - api.us - east - 1.amazonaws.com / dev"
+                                "https://h1u79dg2z9.execute-api.us-east-1.amazonaws.com/dev/"
                                 + '''
     ">Yammme</a>.</p>
     <h3>Verify Your Account</h3>
